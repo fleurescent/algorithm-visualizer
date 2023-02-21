@@ -1,38 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: rgba(150, 150, 150, 1);
+
+  /* Numbers define values that will be used throughout the CSS.
+  --tile-size: 20px for example will set size of the grid squares. */
+  --cols: 50;
+  --rows: 20;
+  --tile-size: 25px;
+  --border-width: 1px;
+}
+
 .App {
-  text-align: center;
+  background-color: #202124;
+  min-height: 100vh;
+  /* text-align: center; */
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #c1c3c9;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Navbar {
+  background: #385dc4;
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.2rem calc((100vw - 1000px) / 2);
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
+  margin: auto;
+  display: grid;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), var(--tile-size));
+  gap: 1px;
+  align-self: flex-start;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.node {
+  width: 25px;
+  height: 25px;
+  outline: 1px solid rgb(179, 158, 181);
+  /* display: inline-block; */
 }
