@@ -1,18 +1,32 @@
+import './Node.css'
+
 const Node = ({ row,
                 col,
                 isStart,
-                isFinish
+                isFinish,
+                isWall,
+                isVisited,
+                previousNode,
+                distance,
+                onMouseDown,
+                onMouseEnter,
+                onMouseUp
               }) => {
   const status = isStart
     ? 'start-node'
     : isFinish
     ? 'finish-node'
+    : isWall
+    ? 'wall-node'
     : '';
 
   return (
     <div
-      key={`row: ${row} col: ${col}`}
+      id={`row: ${row} col: ${col}`}
       className={`node ${status}`}
+      // onMouseDown={() => onMouseDown(row, col)}
+      // onMouseEnter={() => onMouseEnter(row, col)}
+      // onMouseUp={() => onMouseUp()}
     >
     </div>
   )
