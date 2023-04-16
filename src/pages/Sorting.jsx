@@ -1,8 +1,10 @@
+import Grid from '../components/Grid'
+
 const Sorting = () => {
   return (
-    <>
-      <p>Sorting</p>
-    </>
+    <div className='Header'>
+      <Grid />
+    </div>
   );
 }
   

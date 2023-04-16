@@ -3,15 +3,15 @@ import { useState } from 'react'
 import Node from './Node'
 import {dijkstra, getNodesInShortestPathOrder} from '../algorithms/dijkstra'
 
-// const START_NODE_ROW = 10
-// const START_NODE_COL = 11
-// const FINISH_NODE_ROW = 10
-// const FINISH_NODE_COL = 39
+const START_NODE_ROW = 9
+const START_NODE_COL = 9
+const FINISH_NODE_ROW = 39
+const FINISH_NODE_COL = 9
 
-const START_NODE_ROW = 0
-const START_NODE_COL = 1
-const FINISH_NODE_ROW = 8
-const FINISH_NODE_COL = 8
+// const START_NODE_ROW = 0
+// const START_NODE_COL = 1
+// const FINISH_NODE_ROW = 8
+// const FINISH_NODE_COL = 8
 
 // const createNode = (row, col) => {
 //   return (
@@ -43,9 +43,9 @@ const createNode = (row, col) => {
 
 const getInitialGrid = () => {
   const grid = []
-  for (let row = 0; row < 10; row++) {
+  for (let row = 0; row < 50; row++) {
     grid.push([])
-    for (let col = 0; col < 10; col++) {
+    for (let col = 0; col < 20; col++) {
       grid[row].push(createNode(row, col))
     }
   }
@@ -134,16 +134,17 @@ const Grid = () => {
   return (
     <>
       <button onClick={() => visualizeDijkstra()}>
-        Visualize
+        Visualize algorithm
       </button>
       <div className="grid">
-        {grid.map(row => {
+        {grid.map((row, rowId) => {
           return (
-            <div key={row.id}>
-              {row.map(node => {
+            <div key={rowId}>
+              {row.map((node, nodeId) => {
                 const {row, col, isFinish, isStart, isWall} = node
                 return (
                   <Node
+                    key={nodeId}
                     row={row}
                     col={col}
                     isFinish={isFinish}
