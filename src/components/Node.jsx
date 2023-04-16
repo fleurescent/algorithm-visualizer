@@ -5,9 +5,6 @@ const Node = ({ row,
                 isStart,
                 isFinish,
                 isWall,
-                isVisited,
-                previousNode,
-                distance,
                 onMouseDown,
                 onMouseEnter,
                 onMouseUp
@@ -24,9 +21,9 @@ const Node = ({ row,
     <div
       id={`row: ${row} col: ${col}`}
       className={`node ${status}`}
-      // onMouseDown={() => onMouseDown(row, col)}
-      // onMouseEnter={() => onMouseEnter(row, col)}
-      // onMouseUp={() => onMouseUp()}
+      onMouseDown={() => onMouseDown(row, col)}
+      onMouseEnter={() => onMouseEnter(row, col)}
+      onMouseUp={() => onMouseUp()}
     >
     </div>
   )

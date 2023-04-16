@@ -13,7 +13,7 @@
   background-color: red;
 }
 
-.node-visited {
+.visited-node {
   animation-name: visitedAnimation;
   animation-duration: 1.5s;
   animation-timing-function: ease-out;
@@ -46,11 +46,11 @@
   }
 }
 
-.node-wall {
+.wall-node {
   background-color: rgb(12, 53, 71);
 }
 
-.node-shortest-path {
+.shortest-path-node {
   animation-name: shortestPath;
   animation-duration: 1.5s;
   animation-timing-function: ease-out;
