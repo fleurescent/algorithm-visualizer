@@ -13,6 +13,11 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable"
 
 export default function Page() {
   return (
@@ -37,12 +42,35 @@ export default function Page() {
           </Breadcrumb>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4">
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-          </div>
-          <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+            <ResizablePanelGroup direction="horizontal">
+              <ResizablePanel defaultSize={100}>
+                <ResizablePanelGroup direction="vertical">
+                  <ResizablePanel defaultSize={25}>
+                    <div className="flex h-full items-center justify-center">
+                      <span className="font-semibold">Tracer</span>
+                    </div>
+                  </ResizablePanel>
+                  <ResizableHandle />
+                  <ResizablePanel defaultSize={25}>
+                    <div className="flex h-full items-center justify-center">
+                      <span className="font-semibold">Tracer</span>
+                    </div>
+                  </ResizablePanel>
+                  <ResizableHandle />
+                  <ResizablePanel defaultSize={25}>
+                    <div className="flex h-full items-center justify-center">
+                      <span className="font-semibold">Log</span>
+                    </div>
+                  </ResizablePanel>
+                </ResizablePanelGroup>
+              </ResizablePanel>
+              <ResizableHandle />
+              <ResizablePanel defaultSize={100} className="!overflow-y-auto">
+                <div className="flex h-full items-center justify-center">
+                  <span className="font-semibold">Editor</span>
+                </div>
+              </ResizablePanel>
+            </ResizablePanelGroup>
         </div>
       </SidebarInset>
     </SidebarProvider>
