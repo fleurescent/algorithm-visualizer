@@ -18,6 +18,7 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Page() {
   return (
@@ -40,8 +41,9 @@ export default function Page() {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
+          <ThemeToggle/>
         </header>
-        <div className="flex flex-1 flex-col gap-4 p-4">
+        <div className="flex flex-1 flex-col gap-4">
             <ResizablePanelGroup direction="horizontal">
               <ResizablePanel defaultSize={100}>
                 <ResizablePanelGroup direction="vertical">
