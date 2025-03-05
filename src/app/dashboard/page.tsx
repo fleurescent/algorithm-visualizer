@@ -19,6 +19,14 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { Button } from "@/components/ui/button"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
+import { Editor } from "@/components/editor"
 
 export default function Page() {
   return (
@@ -67,9 +75,20 @@ export default function Page() {
                 </ResizablePanelGroup>
               </ResizablePanel>
               <ResizableHandle />
-              <ResizablePanel defaultSize={100} className="!overflow-y-auto">
-                <div className="flex h-full items-center justify-center">
-                  <span className="font-semibold">Editor</span>
+              <ResizablePanel defaultSize={100} className="!overflow-y-hidden h-full">
+                <div className="flex h-full">
+                  <Tabs defaultValue="README.md" className="max-w-none w-full">
+                    <TabsList className="w-full p-1 bg-background justify-start rounded-none">
+                      <TabsTrigger value="README.md" className="border border-transparent data-[state=active]:border-border data-[state=active]:shadow-none">README.md</TabsTrigger>
+                      <TabsTrigger value="algo.py" className="border border-transparent data-[state=active]:border-border data-[state=active]:shadow-none">algo.py</TabsTrigger>
+                    </TabsList>
+                    <TabsContent className="h-full" value="README.md">
+                      <Editor/>
+                    </TabsContent>
+                    <TabsContent className="h-full" value="algo.py">
+                      <Editor/>
+                    </TabsContent>
+                  </Tabs>
                 </div>
               </ResizablePanel>
             </ResizablePanelGroup>
