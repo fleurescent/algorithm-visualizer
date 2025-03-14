@@ -33,7 +33,7 @@ export default function Page() {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
+        <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4 font-[family-name:var(--font-geist-sans)]">
           <SidebarTrigger className="-ml-1" />
           <Separator orientation="vertical" className="mr-2 h-4" />
           <Breadcrumb>
@@ -49,7 +49,7 @@ export default function Page() {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
-          <ThemeToggle/>
+          {/* <ThemeToggle/> */}
         </header>
         <div className="flex flex-1 flex-col gap-4">
             <ResizablePanelGroup direction="horizontal">
@@ -75,7 +75,7 @@ export default function Page() {
                 </ResizablePanelGroup>
               </ResizablePanel>
               <ResizableHandle />
-              <ResizablePanel defaultSize={100} className="!overflow-y-hidden h-full">
+              <ResizablePanel defaultSize={100} className="!overflow-y-hidden h-full font-[family-name:var(--font-geist-mono)]">
                 <div className="flex h-full">
                   <Tabs defaultValue="README.md" className="max-w-none w-full">
                     <TabsList className="w-full p-1 bg-background justify-start rounded-none">
