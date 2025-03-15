@@ -27,6 +27,8 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs"
 import { Editor } from "@/components/editor"
+import { Logger } from "@/components/logger"
+import { Tracer } from "@/components/tracer"
 
 export default function Page() {
   return (
@@ -63,14 +65,12 @@ export default function Page() {
                   <ResizableHandle />
                   <ResizablePanel defaultSize={25}>
                     <div className="flex h-full items-center justify-center">
-                      <span className="font-semibold">Tracer</span>
+                      <Tracer/>
                     </div>
                   </ResizablePanel>
                   <ResizableHandle />
-                  <ResizablePanel defaultSize={25}>
-                    <div className="flex h-full items-center justify-center">
-                      <span className="font-semibold">Log</span>
-                    </div>
+                  <ResizablePanel defaultSize={25} className="!overflow-y-auto">
+                    <Logger/>
                   </ResizablePanel>
                 </ResizablePanelGroup>
               </ResizablePanel>
