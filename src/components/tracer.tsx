@@ -9,8 +9,12 @@ export function Tracer() {
       <tbody>
         <tr className="table-row h-7">
           {
+            // !isArray1D &&
+            <td className="table-cell text-center py-0 px-1 w-7" />
+          }
+          {
             longestRow.map((_, i) => (
-              <td className="table-cell text-center py-0 px-1" key={i}>
+              <td className="table-cell text-center py-0 px-1 w-7" key={i}>
                 <span className="text-sm">{i}</span>
               </td>
             ))
@@ -18,10 +22,16 @@ export function Tracer() {
         </tr>
         {
           data2d.map((row, i) => (
-            <tr key={i}>
+            <tr className="table-row h-7" key={i}>
+              {
+                // !isArray1D &&
+                <td className="table-cell text-center py-0 px-1 w-7">
+                  <span className="text-sm">{i}</span>
+                </td>
+              }
               {
                 row.map((col, j) => (
-                  <td className="table-cell text-center py-0 px-1"
+                  <td className="table-cell text-center py-0 px-1 w-7 border border-solid"
                       key={j}>
                     <span className="text-sm">{col}</span>
                   </td>
