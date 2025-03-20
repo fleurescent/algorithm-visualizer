@@ -57,13 +57,13 @@ export default function Page() {
             <ResizablePanelGroup direction="horizontal">
               <ResizablePanel defaultSize={100}>
                 <ResizablePanelGroup direction="vertical">
-                  <ResizablePanel defaultSize={25}>
+                  {/* <ResizablePanel defaultSize={25}>
                     <div className="flex h-full items-center justify-center">
                       <span className="font-semibold">Tracer</span>
                     </div>
                   </ResizablePanel>
-                  <ResizableHandle />
-                  <ResizablePanel defaultSize={25}>
+                  <ResizableHandle /> */}
+                  <ResizablePanel defaultSize={75}>
                     <div className="flex h-full items-center justify-center">
                       <Tracer/>
                     </div>
